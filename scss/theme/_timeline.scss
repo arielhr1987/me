@@ -4,15 +4,15 @@
   position: relative;
 
   .timeline-item {
-    border-left: 2px solid #6d56c1;
+    border-left: 2px solid $primary;
     padding-left: 25px;
-    padding-bottom: 50px;
+    overflow: auto;
 
     &::before {
       left: 10px;
       width: 12px;
       height: 12px;
-      border: 2px solid #6d56c1;
+      border: 2px solid $primary;
       position: absolute;
       content: "";
       border-radius: 50%;
