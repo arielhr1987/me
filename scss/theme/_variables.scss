@@ -1,3 +1,26 @@
-$font-family-sans-serif: 'Open Sans', sans-serif;
+/**
+ * Colors
+ */
+$blue: #1074e7;
+
+$green: #39BE4E;
+
+$font-family-sans-serif: 'Roboto';
+//$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-monospace: 'Roboto Mono';
 //$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-monospace: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
+
+$headings-font-family: 'Roboto Slab', serif;
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+                (
+                        6: ($spacer * 4),
+                        7: ($spacer * 5),
+                        8: ($spacer * 6),
+                        9: ($spacer * 7),
+                        10: ($spacer * 8)
+                ),
+                $spacers
+);
