@@ -12,8 +12,10 @@ $yellow: #ffc107;
 $green: #28a745;
 $teal: #20c997;
 $cyan: #17a2b8;
-$dark: #2E3035;
-$white: #fff;
+//$dark: #2B2C30;
+//$dark: #575F64;
+
+$theme-colors: map-merge($colors, $theme-colors);
 
 /**
  * Fonts
