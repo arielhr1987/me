@@ -4,11 +4,10 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-//Theme
-@import "theme/variables";
 //Bootstrap
 @import "bs/functions";
 @import "bs/variables";
+@import "theme/variables";
 @import "bs/mixins";
 @import "bs/root";
 @import "bs/reboot";
@@ -48,3 +47,4 @@
 @import "theme/font";
 @import "theme/timeline";
 @import "theme/utilities";
+
