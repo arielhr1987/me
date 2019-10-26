@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 //Bootstrap
-$dark: #2B2C30;
+@import "theme/defaults";
 @import "bs/functions";
 @import "bs/variables";
 @import "theme/variables";
@@ -45,7 +45,7 @@ $dark: #2B2C30;
 @import "bs/utilities";
 @import "bs/print";
 //Theme
-@import "theme/font";
 @import "theme/timeline";
+@import "theme/list-technology";
 @import "theme/utilities";
 
