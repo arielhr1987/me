@@ -16,7 +16,10 @@
     <!--  SEO  -->
 
     <!--  Analitics  -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- reCaptcha -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -42,14 +45,17 @@
 
 <!-- Hotjar Tracking Code for http://google.com -->
 <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:723731,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    (function (h, o, t, j, a, r) {
+        h.hj = h.hj || function () {
+            (h.hj.q = h.hj.q || []).push(arguments)
+        };
+        h._hjSettings = {hjid: 723731, hjsv: 6};
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script');
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
 </script>
 </head>
 <body>
@@ -71,7 +77,7 @@
                 <h1>Hi, I am Ariel</h1>
                 <h2>Senior Fullstack Developer</h2>
                 <p class="text-secondary mb-0">
-                    I am passionate about building excellent software that improves the lives of those around me. I
+                    I am a passionate developer who love building high quality software. I
                     specialize in creating software for clients ranging from individuals and small-businesses all
                     the way to large enterprise corporations.
                 </p>
@@ -84,7 +90,7 @@
     </div>
 </section>
 <!--  Get in Touch  -->
-<section class="bg-dark text-white section-get-in-touch">
+<section class="bg-dark text-white" id="get-in-touch">
     <div class="py-6 container position-relative">
         <div class="row">
             <div class="col-md-7 text-center text-md-right">
@@ -93,7 +99,7 @@
                 </h4>
             </div>
             <div class="col-md-5 mt-3 mt-md-0  text-center text-md-left d-md-flex align-content-md-center flex-md-wrap">
-                <a href="#contact" class="btn btn-lg btn-outline-success ">
+                <a href="#contact" class="btn btn-lg btn-outline-success">
                     Get in touch
                 </a>
             </div>
@@ -101,7 +107,7 @@
     </div>
 </section>
 <!--  Technologies  -->
-<section class="py-5 bg-blue section-technologies">
+<section class="py-5 bg-blue" id="technologies">
     <div class="container text-center text-white">
         <p class="text-monospace">Experience</p>
         <h2 class="">
@@ -423,6 +429,79 @@
         </div>
     </div>
 </section>
+<!--  Contact  -->
+<section class="bg-dark text-white" id="contact">
+    <div class="container py-6">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="text-monospace">Contact</p>
+                <h4 class="mb-3">
+                    Do you have a project in mind? <br> Lets build it together.
+                </h4>
+            </div>
+            <div class="col-12 col-md-6 ">
+                <form action="https://usebasin.com/f/b7ca0b24f472" method="post" id="contact-form" autocomplete="off">
+                    <div class="alert alert-success d-none" role="alert" id="form-message"></div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="g-recaptcha"
+                             data-theme="dark"
+                             data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy">
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-lg btn-outline-success">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-6 text-center">
+                <p class="mt-7 text-monospace">
+                    You privacy is protected
+                </p>
+                <p class=" small">
+                    I dont share any of the information provided by my clients to any third party.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    (function () {
+        var form = document.getElementById("contact-form");
+        form.onsubmit = function (event) {
+            event.preventDefault();
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", form.action, true);
+            xhr.onload = function (e) {
+                console.log(xhr);
+                var response = JSON.parse(xhr.response);
+                var formMessage = document.getElementById("form-message");
+                formMessage.classList.remove('alert-success', 'alert-danger');
+                if (xhr.status === 200) {
+                    formMessage.classList.add('alert-success');
+                    formMessage.innerHTML = "Your message was sent! I will be in contact with you soon.";
+                } else {
+                    formMessage.classList.add('alert-danger');
+                    formMessage.innerHTML = "Ohh something went wrong! Try again please."; //+ response.error;
+                }
+                formMessage.classList.remove('d-none');
+            };
+            xhr.send(formData);
+        };
+    })();
+</script>
 </main>
 <footer class="footer">
     <div class="container">
