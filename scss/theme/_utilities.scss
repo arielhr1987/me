@@ -5,3 +5,13 @@
   background-position: bottom;
   background-size: 10px 1px;
 }
+
+.no-underline {
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}

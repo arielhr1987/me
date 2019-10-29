@@ -19,6 +19,22 @@
   background-repeat: no-repeat;
 }
 
+#projects {
+
+}
+
+#social {
+  .container {
+    a {
+      width: 50px;
+
+      path {
+        fill: white;
+      }
+    }
+  }
+}
+
 #contact {
   .container {
     background-image: url(/assets/img/world.png);
