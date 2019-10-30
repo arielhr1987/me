@@ -72,31 +72,33 @@ projects:
             <p class="text-monospace">Portfolio</p>
             <h2>Projects</h2>
             <p class="text-secondary">Check out some of my projects</p>
-<!--            <hr class="my-3 mx-auto w-50">-->
+            <hr class="my-3 mx-auto w-50">
         </div>
         <div class="text-center">
-            <h4 class="text-secondary d-inline-block mb-4 underline-dash text-monospace pb-2">
+            <h4 class="text-secondary d-inline-block my-4 text-monospace pb-2">
                 Wordpress Plugins
             </h4>
         </div>
 
         <div class="row">
             {% for project in page.projects %}
-            <div class="col-xs-12 col-md-6">
-                <a class="card d-flex flex-row align-content-start no-underline bg-light mb-4"
-                   href="{{ project[1].url }}">
+            <div class="col-xs-12 col-md-8 offset-md-2">
+                <div class="d-flex flex-row align-content-start no-underline bg-light mb-4">
                     <div class="p-3">
                         <img class="plugin-icon float-left rounded" style="width: 100px;"
                              src="{{ project[1].img }}"
                              alt="{{ project[1].name }}">
                     </div>
-                    <div class="p-3 pl-0">
+                    <div class="py-3 pr-3">
                         <h5 class="text-dark">{{ project[1].name }}</h5>
-                        <small class="text-monospace text-muted">
+                        <p class="text-monospace text-muted small">
                             {{ project[1].description }}
-                        </small>
+                        </p>
+                        <div class="">
+                            <a class="no-underline" href="{{ project[1].url }}">View →</a>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -166,9 +168,13 @@ projects:
                 <p class="text-monospace">
                     Social
                 </p>
+            </div>
+            <div class="col-12 col-md-12 text-center ">
                 <h2 class="mb-3">
-                    Other places to look at
+                    Other places to look at:
                 </h2>
+            </div>
+            <div class="col-12 col-md-12 text-center ">
                 <div class="">
                     <a href="https://arielhr1987.github.com" class="d-inline-block mx-1">
                         <svg viewBox="0 0 128 128"><title>GitHub</title>
