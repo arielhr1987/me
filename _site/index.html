@@ -372,65 +372,84 @@
                 </div>
             </div>
             
+            <div class="col-xs-12 col-md-8 offset-md-2">
+                <div class="d-flex flex-row align-content-start no-underline bg-light mb-4">
+                    <div class="p-3">
+                        <img class="plugin-icon float-left rounded" style="width: 100px;"
+                             src="https://ps.w.org/leira-letter-avatar/assets/icon-256x256.jpg"
+                             alt="Leira Letter Avatar">
+                    </div>
+                    <div class="py-3 pr-3">
+                        <h5 class="text-dark">Leira Letter Avatar</h5>
+                        <p class="text-monospace text-muted small">
+                            Letters Avatar allows you to generate automatically user avatar base on their initial letters.
+                        </p>
+                        <div class="">
+                            <a class="no-underline" href="https://wordpress.org/plugins/leira-letter-avatar/">View →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>
 <!--  Education & Employment  -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 mt-5 mt-md-0">
-                <h4 class="text-secondary d-inline-block underline-dash text-monospace mb-4  pb-2">
-                    Education
-                </h4>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h5 class=" mb-1">Tijuana Technical Institute - Master Degree</h5>
-                        <p class="text-monospace text-muted small mb-1">2016 - 2017</p>
-                        <p>
+<!--<section class="py-5 bg-light">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-12 col-md-6 mt-5 mt-md-0">-->
+<!--                <h4 class="text-secondary d-inline-block underline-dash text-monospace mb-4  pb-2">-->
+<!--                    Education-->
+<!--                </h4>-->
+<!--                <div class="timeline">-->
+<!--                    <div class="timeline-item">-->
+<!--                        <h5 class=" mb-1">Tijuana Technical Institute - Master Degree</h5>-->
+<!--                        <p class="text-monospace text-muted small mb-1">2016 - 2017</p>-->
+<!--                        <p>-->
 
-                        </p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5 class=" mb-1">ISPJAE - Informatics Engineer</h5>
-                        <p class="text-monospace text-muted small mb-1">2006 - 2011</p>
-                        <p>
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-item">-->
+<!--                        <h5 class=" mb-1">ISPJAE - Informatics Engineer</h5>-->
+<!--                        <p class="text-monospace text-muted small mb-1">2006 - 2011</p>-->
+<!--                        <p>-->
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <h4 class="text-secondary d-inline-block underline-dash text-monospace mb-4 pb-2">
-                    Employment
-                </h4>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h5 class=" mb-1">Caliente.MX</h5>
-                        <p class="text-monospace text-muted small mb-1">2017 - ?</p>
-                        <p>
-                            Senior Fullstack Developer
-                        </p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5 class=" mb-1">Grupo Nival</h5>
-                        <p class="text-monospace text-muted small mb-1">2013 - 2016</p>
-                        <p>
-                            Fullstack Developer
-                        </p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5 class=" mb-1">Desoft</h5>
-                        <p class="text-monospace text-muted small mb-1">2011 - 2013</p>
-                        <p>
-                            Developer
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-12 col-md-6">-->
+<!--                <h4 class="text-secondary d-inline-block underline-dash text-monospace mb-4 pb-2">-->
+<!--                    Employment-->
+<!--                </h4>-->
+<!--                <div class="timeline">-->
+<!--                    <div class="timeline-item">-->
+<!--                        <h5 class=" mb-1">Caliente.MX</h5>-->
+<!--                        <p class="text-monospace text-muted small mb-1">2017 - ?</p>-->
+<!--                        <p>-->
+<!--                            Senior Fullstack Developer-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-item">-->
+<!--                        <h5 class=" mb-1">Grupo Nival</h5>-->
+<!--                        <p class="text-monospace text-muted small mb-1">2013 - 2016</p>-->
+<!--                        <p>-->
+<!--                            Fullstack Developer-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="timeline-item">-->
+<!--                        <h5 class=" mb-1">Desoft</h5>-->
+<!--                        <p class="text-monospace text-muted small mb-1">2011 - 2013</p>-->
+<!--                        <p>-->
+<!--                            Developer-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <!--  Social  -->
 <section class="py-6 bg-blue text-white" id="social">
     <div class="container">
@@ -533,9 +552,10 @@
                 if (xhr.status === 200) {
                     formMessage.classList.add('alert-success');
                     formMessage.innerHTML = "Your message was sent! I will be in contact with you soon.";
+                    form.reset();
                 } else {
                     formMessage.classList.add('alert-danger');
-                    formMessage.innerHTML = "Ohh something went wrong! Try again please."; //+ response.error;
+                    formMessage.innerHTML = "Something went wrong! Please check all fields are correct and try again."; //+ response.error;
                 }
                 formMessage.classList.remove('d-none');
             };
@@ -607,7 +627,7 @@
 <!--        <hr class="m-0">-->
         <div class="row">
             <div class="col-12 text-center my-3">
-                <small class="text-muted"> 2019 — Ariel — Senior Fullstack Developer</small>
+                <small class="text-muted"> 2020 — Ariel — Senior Fullstack Developer</small>
             </div>
         </div>
 
